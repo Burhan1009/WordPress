@@ -36,7 +36,14 @@ https://youtu.be/SoBlB2K2ULk?si=oNJaPToOsmg2HFvp
 
 ## 6 Create EC2 Instance using Terraform  : 
 ```bash
-
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"  # Example AMI ID (choose correct one for your region)
+  instance_type = "t2.micro"  # Use "t2.micro" for free-tier eligible instance
+  
+  tags = {
+    Name = "TerraformExampleInstance"
+  }
+}
 ```
 ## 7 Docker Install Commands
 ```bash
